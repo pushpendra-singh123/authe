@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const useRouter = require("./routes/emp"); // Correct import
+const userRouter = require("./routes/emp"); // Renamed from useRouter to userRouter
 const { connectDB } = require("./connectionDB");
 const path = require("path");
 const uiRouter = require("./routes/uiEmp");
@@ -18,7 +18,7 @@ connectDB("mongodb://localhost:27017/authe_tbppp").then(() => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/", uiRouter);
-app.use("/", useRouter); // Corrected from userRoute to useRouter
+app.use("/", userRouter); // Updated to use userRouter
 
 // app listening
 app.listen(6001, () => {

@@ -7,4 +7,8 @@ uiRouter.get("/", (req, res) => {
 uiRouter.get("/login", (req, res) => {
   res.render("login", { title: "login" });
 });
+
+uiRouter.post("/login", (req, res) => {
+  const { email, password } = req.body;
+});
 module.exports = uiRouter;

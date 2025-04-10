@@ -1,6 +1,8 @@
 const express = require("express");
-const router = express.Router();
-const emp = require("../controllers/emp");
+const userRouter = express.Router();
+const { empRegister } = require("../controllers/emp");
 
-router.post("/addemp", emp.empRegister);
-module.exports = router;
+// Example POST route for employee registration
+userRouter.post("/addemp", empRegister);
+
+module.exports = userRouter;
